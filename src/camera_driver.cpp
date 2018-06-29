@@ -21,7 +21,9 @@ int main(int argc, char** argv)
 	ros::init(argc, argv, "cameleon_camera");
 	ros::NodeHandle n = ros::NodeHandle("~");
 	image_transport::ImageTransport it(n);
-	VideoCapture cap("rtsp://172.43.50.194/axis-media/media.amp?camera=1"); // open the default camera
+	//Change manually parameters of camera at 192.168.1.6
+        //Copy the url for different params
+        VideoCapture cap("rtsp://192.168.1.6/h264.sdp?res=half&x0=0&y0=0&x1=2048&y1=1536&qp=20&ratelimit=10000&doublescan=0&ssn=16570"); // open the default camera
 	if(!cap.isOpened())  // check if we succeeded
 		return -1;
 
